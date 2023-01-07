@@ -1,6 +1,14 @@
 # Voice assistant
 Use your microphone to launch arbitrary Python functions
 
+## How to use
+0. Define commands in `command_library.py`
+1. Set the `KEYWORD` variable in `client.py`; It is the word to say before a command (default: "yoshi")
+2. Launch `server.py` in a terminal
+3. Launch `client.py` in a separate terminal
+4. Say "`KEYWORD` `command_name`" to launch a command (try: "yoshi browser open youtube")
+
+
 ## Description
 This project leverages the multilingual speech-to-text model *Whisper* from OpenAI. The model is loaded on a websocket server. The connected client sends an audio input stream and receives text transcriptions. If the predefined *keyword* is found, the following words are parsed to find a *registered command* using fuzzy matching. If there's a match, the command is executed on the client device.
 
